@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #f3ec78, #af4261);
+            color: #333;
+        }
+
+        .login-container {
+            background: #ffffff;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            text-align: center;
+            position: relative;
+        }
+
+        .login-container h2 {
+            margin-top: 0;
+            font-size: 28px;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #555;
+            text-align: left;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-sizing: border-box;
+            margin-top: 5px;
+            transition: all 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            border-color: #af4261;
+            outline: none;
+            box-shadow: 0 0 10px rgba(175, 66, 97, 0.1);
+        }
+
+        button {
+            background: linear-gradient(135deg, #ff7e5f, #feb47b);
+            color: #fff;
+            border: none;
+            padding: 15px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            width: 100%;
+            margin-top: 20px;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: linear-gradient(135deg, #feb47b, #ff7e5f);
+        }
+
+        .error {
+            margin-top: 15px;
+            color: #ff0000;
+            font-size: 14px;
+        }
+
+        .error-message {
+            margin: 0;
+        }
+
+        /* Decorative Circle */
+        .login-container::before {
+            content: "";
+            position: absolute;
+            top: -70px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #ff7e5f, #feb47b);
+            border-radius: 50%;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .icon {
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            transform: translateY(-50%);
+            font-size: 18px;
+            color: #af4261;
+        }
+
+        .form-group input {
+            padding-left: 40px;
+        }
+    </style>
+</head>
+<body>
+<div class="login-container">
+    <h2>Login</h2>
+    <form id="login" action="/login" method="post">
+        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+
+        <div class="form-group">
+            <label for="korisnickoIme">Korisničko ime:</label>
+            <input required type="text" id="korisnickoIme" name="korisnickoIme">
+        </div>
+        <div class="form-group">
+            <label for="password">Lozinka:</label>
+            <input required type="password" id="password" name="password">
+        </div>
+        <button type="submit">Prijava</button>
+        <div class="error">
+            <!-- Ovdje će se prikazivati greška, ako postoji -->
+            <p class="error-message" th:if="${param.error}">Pogresan email ili lozinka pokusajte ponovo.</p>
+        </div>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoo Dashboard</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            max-width: 1200px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #4CAF50, #8BC34A);
+            color: #fff;
+            padding: 40px 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .nav-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        nav {
+            width: 100%;
+        }
+
+        nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        nav ul.primary-nav li, nav ul.secondary-nav li {
+            flex: 1 1 30%;
+            min-width: 150px;
+            text-align: center;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        nav ul.primary-nav li:last-child, nav ul.secondary-nav li:last-child {
+            border-bottom: none;
+        }
+
+        nav ul li a {
+            display: block;
+            padding: 15px;
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background: #4CAF50;
+            color: #fff;
+        }
+
+        @media (min-width: 768px) {
+            nav ul li {
+                border-bottom: none;
+            }
+
+            nav ul.primary-nav li, nav ul.secondary-nav li {
+                flex: 1 1 auto;
+                margin: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Zoo Dashboard</h1>
+    </header>
+    <div class="nav-container">
+        <nav>
+            <ul>
+                <li><a href="/dodaj-nastambu">Dodaj Nastambu</a></li>
+                <li><a href="/dodaj-zivotinju">Dodaj Životinju</a></li>
+                <li><a href="/dodaj-radnika">Dodaj Radnika</a></li>
+                <li><a href="/dodaj-radno-vrijeme">Dodaj Radno Vrijeme</a></li>
+                <li><a href="/dodaj-obavezu">Dodaj Obavezu</a></li>
+                <li><a href="/dodaj-grupnu-posjetu">Dodaj Grupnu Posjetu</a></li>
+                <li><a href="/dodaj-osposobljavanje">Dodaj Osposobljavanje</a></li>
+                <li><a href="/dodaj-incident">Dodaj Incident</a></li>
+                <li><a href="/dodaj-trosak">Dodaj Trosak</a></li>
+            </ul>
+        </nav>
+        <nav>
+            <ul>
+                <li><a href="/prikazi-nastambu">Prikazi Nastambu</a></li>
+                <li><a href="/prikazi-sve-zivotinje">Prikazi Životinje</a></li>
+                <li><a href="/prikazi-sve-radnike">Prikazi Radnike</a></li>
+                <li><a href="/prikazi-sva-radna-vremena">Prikazi Radno Vrijeme</a></li>
+                <li><a href="/prikazi-sve-obaveze">Prikazi Obavezu</a></li>
+                <li><a href="/prikazi-grupne-posjete">Prikazi Grupnu Posjetu</a></li>
+                <li><a href="/prikazi-osposobljavanja">Prikazi Osposobljavanja</a></li>
+                <li><a href="/prikazi-incidente">Prikazi Incidente</a></li>
+                <li><a href="/prikazi-troskove">Prikazi troskove</a></li>
+
+            </ul>
+        </nav>
+    </div>
+</div>
+</body>
+</html>
